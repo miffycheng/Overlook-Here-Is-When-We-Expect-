@@ -35,3 +35,30 @@ Output Data:
 Bad Visualization book.twb: Tableau workbook containing visualizations of COVID-19 trends from 2020 to 2022.
 - adjust the True/False drop-down button to toggle between displaying all data and showing data in seven-day intervals
 
+# Getting Started
+**Prerequisites**
+- Python 3.x
+- Jupyter Notebook
+- Pandas, Matplotlib, Seaborn (for data processing and visualization)
+- Tableau (for visualization)
+
+**Running the Project**
+
+1. Clone this repository:
+
+git clone 
+```
+https://github.com/miffycheng/Overlook-Here-Is-When-We-Expect-.git
+```
+
+2. Navigate to the project directory:
+```
+cd yourrepository
+```
+3. Open and run the Jupyter Notebook
+4. Load ```all_cases.xlsx``` into Tableau and use ```Bad Visualization book.twb``` for analysis
+
+This project is for educational purposes. Feel free to use and modify it as needed.
+
+Author
+Miffy C.
