@@ -1,4 +1,4 @@
-# Overlook Here's When We Expect Omicron
+# Overlook Here's When We Expect Omicron to Peak
 
 **Overview**
 This project focuses on cleaning and visualizing COVID-19 data using Python and Tableau. It processes weekly case data, extracts key insights, and creates meaningful visualizations to analyze trends over time.
