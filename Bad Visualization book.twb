@@ -1,0 +1,2357 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.25.0114.1153                               -->
+<workbook original-version='18.1' source-build='2024.3.3 (20243.25.0114.1153)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Show Every 7 Days' datatype='boolean' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='true'>
+        <calculation class='tableau' formula='true' />
+        <members>
+          <member value='true' />
+          <member value='false' />
+        </members>
+      </column>
+    </datasource>
+    <datasource caption='cases (all_cases)' inline='true' name='federated.13bbhcn13tjrfp1g2ke161le5s1y' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='all_cases' name='excel-direct.1r6n6c5075x8fr13ztmcy0xruqfh'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/miffycheng/Projects/covid/all_cases.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='integer' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[2020]' />
+            <value name='[2021]' />
+            <value name='[2022]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[cases].[us20_value]' />
+              <field name='[cases].[us21_value]' />
+              <field name='[cases].[us22_value]' />
+            </group>
+          </groups>
+          <relation connection='excel-direct.1r6n6c5075x8fr13ztmcy0xruqfh' name='cases' table='[cases$]' type='table'>
+            <columns gridOrigin='A1:E366:no:A1:E366:0' header='yes' outcome='6'>
+              <column datatype='integer' name='F1' ordinal='0' />
+              <column datatype='string' name='date' ordinal='1' />
+              <column datatype='integer' name='us20_value' ordinal='2' />
+              <column datatype='integer' name='us21_value' ordinal='3' />
+              <column datatype='integer' name='us22_value' ordinal='4' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cases]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:E366:no:A1:E366:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[cases]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[cases_0505DD9E49C64690A97C32D61CD2D2B6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[cases]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LZH_RTW_S2_ZHANT' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[cases_0505DD9E49C64690A97C32D61CD2D2B6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cases_0505DD9E49C64690A97C32D61CD2D2B6]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cases_0505DD9E49C64690A97C32D61CD2D2B6]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Show' datatype='string' name='[Calculation_2077777962978377732]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF INDEX() % 7 = 0 THEN &quot;Show&quot; ELSE &quot;Hide&quot; END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Converted Date' datatype='datetime' name='[Calculation_2077777962980474886]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATEPARSE(&quot;MMM. d&quot;, [date])' />
+      </column>
+      <column caption='Data Filter' datatype='string' name='[Calculation_2077777962980646919]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = False THEN &quot;Show&quot;&#10;ELSEIF INDEX() % 7 = 0 THEN &quot;Show&quot;&#10;ELSE &quot;Hide&quot;&#10;END'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Year' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+      <column caption='Value' datatype='integer' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <column caption='Value (copy)' datatype='integer' name='[Value (copy)_2077777962971697152]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Pivot Field Values]' />
+      </column>
+      <column caption='cases' datatype='table' name='[__tableau_internal_object_id__].[cases_0505DD9E49C64690A97C32D61CD2D2B6]' role='measure' type='quantitative' />
+      <column datatype='string' name='[date]' role='dimension' type='nominal' />
+      <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
+      <column-instance column='[date]' derivation='None' name='[none:date:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:date:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Apr. 29&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Apr. 9&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Aug. 19&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Dec. 28&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Dec. 8&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Feb. 17&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Jan. 29&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Jan. 9&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Jul. 18&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Jun. 27&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Jun. 7&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Mar. 17&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;May. 26&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;May. 6&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Nov. 15&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Oct. 25&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Oct. 5&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Sep. 14&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Apr. 1&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Apr. 21&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Aug. 11&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Aug. 31&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Dec. 20&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Feb. 9&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Jan. 1&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Jan. 21&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Jul. 10&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Jul. 30&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Jun. 19&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Mar. 29&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Mar. 9&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;May. 18&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Nov. 27&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Nov. 7&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Oct. 17&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Sep. 26&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Sep. 6&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Apr. 25&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Apr. 5&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Aug. 15&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Dec. 24&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Dec. 4&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Feb. 13&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Jan. 25&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Jan. 5&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Jul. 14&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Jun. 23&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Jun. 3&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Mar. 13&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;May. 2&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;May. 22&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Nov. 11&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Oct. 1&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Oct. 21&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Sep. 10&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Sep. 30&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Apr. 13&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Aug. 23&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Aug. 3&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Dec. 12&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Feb. 1&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Feb. 21&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Jan. 13&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Jul. 2&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Jul. 22&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Jun. 11&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Mar. 1&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Mar. 21&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;May. 10&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;May. 30&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Nov. 19&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Oct. 29&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Oct. 9&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Sep. 18&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Apr. 10&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Apr. 30&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Aug. 20&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Dec. 29&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Dec. 9&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Feb. 18&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Jan. 10&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Jan. 30&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Jul. 19&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Jun. 28&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Jun. 8&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Mar. 18&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;May. 27&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;May. 7&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Nov. 16&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Oct. 26&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Oct. 6&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Sep. 15&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Apr. 26&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Apr. 6&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Aug. 16&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Dec. 25&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Dec. 5&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Feb. 14&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Jan. 26&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Jan. 6&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Jul. 15&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Jun. 24&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Jun. 4&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Mar. 14&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;May. 23&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;May. 3&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Nov. 12&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Oct. 2&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Oct. 22&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Sep. 11&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Apr. 19&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Aug. 29&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Aug. 9&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Dec. 18&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Feb. 27&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Feb. 7&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Jan. 19&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Jul. 28&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Jul. 8&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Jun. 17&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Mar. 27&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Mar. 7&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;May. 16&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Nov. 25&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Nov. 5&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Oct. 15&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Sep. 24&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Sep. 4&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Apr. 2&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Apr. 22&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Aug. 12&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Dec. 1&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Dec. 21&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Feb. 10&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Jan. 2&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Jan. 22&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Jul. 11&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Jul. 31&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Jun. 20&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Mar. 10&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Mar. 30&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;May. 19&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Nov. 28&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Nov. 8&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Oct. 18&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Sep. 27&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Sep. 7&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Apr. 17&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Aug. 27&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Aug. 7&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Dec. 16&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Feb. 25&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Feb. 5&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Jan. 17&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Jul. 26&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Jul. 6&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Jun. 15&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Mar. 25&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Mar. 5&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;May. 14&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Nov. 23&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Nov. 3&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Oct. 13&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Sep. 2&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Sep. 22&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Apr. 27&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Apr. 7&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Aug. 17&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Dec. 26&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Dec. 6&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Feb. 15&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Jan. 27&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Jan. 7&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Jul. 16&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Jun. 25&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Jun. 5&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Mar. 15&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;May. 24&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;May. 4&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Nov. 13&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Oct. 23&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Oct. 3&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Sep. 12&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Apr. 14&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Aug. 24&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Aug. 4&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Dec. 13&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Feb. 2&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Feb. 22&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Jan. 14&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Jul. 23&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Jul. 3&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Jun. 12&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Mar. 2&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Mar. 22&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;May. 11&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;May. 31&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Nov. 20&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Oct. 10&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Oct. 30&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Sep. 19&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Apr. 15&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Aug. 25&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Aug. 5&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Dec. 14&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Feb. 23&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Feb. 3&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Jan. 15&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Jul. 24&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Jul. 4&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Jun. 13&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Mar. 23&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Mar. 3&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;May. 12&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Nov. 1&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Nov. 21&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Oct. 11&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Oct. 31&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Sep. 20&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Apr. 18&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Aug. 28&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Aug. 8&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Dec. 17&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Feb. 26&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Feb. 6&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Jan. 18&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Jul. 27&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Jul. 7&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Jun. 16&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Mar. 26&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Mar. 6&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;May. 15&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Nov. 24&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Nov. 4&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Oct. 14&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Sep. 23&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Sep. 3&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Apr. 20&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Aug. 10&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Aug. 30&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Dec. 19&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Feb. 28&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Feb. 8&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Jan. 20&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Jul. 29&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Jul. 9&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Jun. 18&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Mar. 28&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Mar. 8&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;May. 17&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Nov. 26&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Nov. 6&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Oct. 16&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Sep. 25&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Sep. 5&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Apr. 11&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Aug. 1&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Aug. 21&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Dec. 10&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Dec. 30&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Feb. 19&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Jan. 11&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Jan. 31&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Jul. 20&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Jun. 29&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Jun. 9&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Mar. 19&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;May. 28&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;May. 8&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Nov. 17&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Oct. 27&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Oct. 7&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Sep. 16&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Apr. 28&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Apr. 8&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Aug. 18&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Dec. 27&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Dec. 7&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Feb. 16&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Jan. 28&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Jan. 8&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Jul. 17&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Jun. 26&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Jun. 6&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Mar. 16&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;May. 25&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;May. 5&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Nov. 14&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Oct. 24&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Oct. 4&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Sep. 13&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Apr. 23&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Apr. 3&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Aug. 13&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Dec. 2&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Dec. 22&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Feb. 11&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Jan. 23&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Jan. 3&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Jul. 12&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Jun. 1&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Jun. 21&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Mar. 11&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Mar. 31&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;May. 20&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Nov. 29&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Nov. 9&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Oct. 19&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Sep. 28&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Sep. 8&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Apr. 16&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Aug. 26&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Aug. 6&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Dec. 15&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Feb. 24&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Feb. 4&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Jan. 16&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Jul. 25&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Jul. 5&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Jun. 14&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Mar. 24&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Mar. 4&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;May. 13&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Nov. 2&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Nov. 22&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Oct. 12&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Sep. 1&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Sep. 21&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Apr. 12&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Aug. 2&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Aug. 22&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Dec. 11&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Dec. 31&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Feb. 20&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Jan. 12&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Jul. 1&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Jul. 21&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Jun. 10&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Jun. 30&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Mar. 20&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;May. 29&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;May. 9&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Nov. 18&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Oct. 28&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Oct. 8&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Sep. 17&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Apr. 24&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Apr. 4&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Aug. 14&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Dec. 23&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Dec. 3&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Feb. 12&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Jan. 24&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Jan. 4&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Jul. 13&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Jun. 2&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Jun. 22&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Mar. 12&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;May. 1&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;May. 21&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Nov. 10&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Nov. 30&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Oct. 20&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Sep. 29&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Sep. 9&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Pivot Field Names:nk]' palette='jewel_bright_10_0' type='palette'>
+            <map to='#64cdcc'>
+              <bucket>&quot;2020&quot;</bucket>
+            </map>
+            <map to='#f9a729'>
+              <bucket>&quot;2022&quot;</bucket>
+            </map>
+            <map to='#fd6f30'>
+              <bucket>&quot;2021&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Taiwan&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Show Every 7 Days' datatype='boolean' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='true'>
+          <calculation class='tableau' formula='true' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='cases' id='cases_0505DD9E49C64690A97C32D61CD2D2B6'>
+            <properties context=''>
+              <relation name='Pivot' type='pivot'>
+                <columns>
+                  <column datatype='string' name='Pivot Field Names' />
+                  <column datatype='integer' name='Pivot Field Values' />
+                </columns>
+                <tag name='Pivot Field Names'>
+                  <value name='[2020]' />
+                  <value name='[2021]' />
+                  <value name='[2022]' />
+                </tag>
+                <groups>
+                  <group name='Pivot Field Values'>
+                    <field name='[cases].[us20_value]' />
+                    <field name='[cases].[us21_value]' />
+                    <field name='[cases].[us22_value]' />
+                  </group>
+                </groups>
+                <relation connection='excel-direct.1r6n6c5075x8fr13ztmcy0xruqfh' name='cases' table='[cases$]' type='table'>
+                  <columns gridOrigin='A1:E366:no:A1:E366:0' header='yes' outcome='6'>
+                    <column datatype='integer' name='F1' ordinal='0' />
+                    <column datatype='string' name='date' ordinal='1' />
+                    <column datatype='integer' name='us20_value' ordinal='2' />
+                    <column datatype='integer' name='us21_value' ordinal='3' />
+                    <column datatype='integer' name='us22_value' ordinal='4' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cases (all_cases)' name='federated.13bbhcn13tjrfp1g2ke161le5s1y' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Show Every 7 Days' datatype='boolean' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='true'>
+              <calculation class='tableau' formula='true' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.13bbhcn13tjrfp1g2ke161le5s1y'>
+            <column caption='Data Filter' datatype='string' name='[Calculation_2077777962980646919]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='IF [Parameters].[Parameter 1] = False THEN &quot;Show&quot;&#10;ELSEIF INDEX() % 7 = 0 THEN &quot;Show&quot;&#10;ELSE &quot;Hide&quot;&#10;END'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column caption='Year' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+            <column caption='Value' datatype='integer' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column datatype='string' name='[date]' role='dimension' type='nominal' />
+            <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
+            <column-instance column='[date]' derivation='None' name='[none:date:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_2077777962980646919]' derivation='User' name='[usr:Calculation_2077777962980646919:nk]' pivot='key' type='nominal'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <manual-sort column='[federated.13bbhcn13tjrfp1g2ke161le5s1y].[none:date:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Jan. 1&quot;</bucket>
+              <bucket>&quot;Jan. 2&quot;</bucket>
+              <bucket>&quot;Jan. 7&quot;</bucket>
+              <bucket>&quot;Jan. 3&quot;</bucket>
+              <bucket>&quot;Jan. 4&quot;</bucket>
+              <bucket>&quot;Jan. 5&quot;</bucket>
+              <bucket>&quot;Jan. 6&quot;</bucket>
+              <bucket>&quot;Jan. 8&quot;</bucket>
+              <bucket>&quot;Jan. 9&quot;</bucket>
+              <bucket>&quot;Jan. 10&quot;</bucket>
+              <bucket>&quot;Jan. 11&quot;</bucket>
+              <bucket>&quot;Jan. 12&quot;</bucket>
+              <bucket>&quot;Jan. 13&quot;</bucket>
+              <bucket>&quot;Jan. 14&quot;</bucket>
+              <bucket>&quot;Jan. 15&quot;</bucket>
+              <bucket>&quot;Jan. 16&quot;</bucket>
+              <bucket>&quot;Jan. 17&quot;</bucket>
+              <bucket>&quot;Jan. 18&quot;</bucket>
+              <bucket>&quot;Jan. 19&quot;</bucket>
+              <bucket>&quot;Jan. 20&quot;</bucket>
+              <bucket>&quot;Jan. 21&quot;</bucket>
+              <bucket>&quot;Jan. 22&quot;</bucket>
+              <bucket>&quot;Jan. 23&quot;</bucket>
+              <bucket>&quot;Jan. 24&quot;</bucket>
+              <bucket>&quot;Jan. 25&quot;</bucket>
+              <bucket>&quot;Jan. 26&quot;</bucket>
+              <bucket>&quot;Jan. 27&quot;</bucket>
+              <bucket>&quot;Jan. 28&quot;</bucket>
+              <bucket>&quot;Jan. 29&quot;</bucket>
+              <bucket>&quot;Jan. 30&quot;</bucket>
+              <bucket>&quot;Jan. 31&quot;</bucket>
+              <bucket>&quot;Feb. 1&quot;</bucket>
+              <bucket>&quot;Feb. 2&quot;</bucket>
+              <bucket>&quot;Feb. 3&quot;</bucket>
+              <bucket>&quot;Feb. 4&quot;</bucket>
+              <bucket>&quot;Feb. 5&quot;</bucket>
+              <bucket>&quot;Feb. 6&quot;</bucket>
+              <bucket>&quot;Feb. 7&quot;</bucket>
+              <bucket>&quot;Feb. 8&quot;</bucket>
+              <bucket>&quot;Feb. 9&quot;</bucket>
+              <bucket>&quot;Feb. 10&quot;</bucket>
+              <bucket>&quot;Feb. 11&quot;</bucket>
+              <bucket>&quot;Feb. 12&quot;</bucket>
+              <bucket>&quot;Feb. 13&quot;</bucket>
+              <bucket>&quot;Feb. 14&quot;</bucket>
+              <bucket>&quot;Feb. 15&quot;</bucket>
+              <bucket>&quot;Feb. 16&quot;</bucket>
+              <bucket>&quot;Feb. 17&quot;</bucket>
+              <bucket>&quot;Feb. 18&quot;</bucket>
+              <bucket>&quot;Feb. 19&quot;</bucket>
+              <bucket>&quot;Feb. 20&quot;</bucket>
+              <bucket>&quot;Feb. 21&quot;</bucket>
+              <bucket>&quot;Feb. 22&quot;</bucket>
+              <bucket>&quot;Feb. 23&quot;</bucket>
+              <bucket>&quot;Feb. 24&quot;</bucket>
+              <bucket>&quot;Feb. 25&quot;</bucket>
+              <bucket>&quot;Feb. 26&quot;</bucket>
+              <bucket>&quot;Feb. 27&quot;</bucket>
+              <bucket>&quot;Feb. 28&quot;</bucket>
+              <bucket>&quot;Mar. 1&quot;</bucket>
+              <bucket>&quot;Mar. 2&quot;</bucket>
+              <bucket>&quot;Mar. 3&quot;</bucket>
+              <bucket>&quot;Mar. 4&quot;</bucket>
+              <bucket>&quot;Mar. 5&quot;</bucket>
+              <bucket>&quot;Mar. 6&quot;</bucket>
+              <bucket>&quot;Mar. 7&quot;</bucket>
+              <bucket>&quot;Mar. 8&quot;</bucket>
+              <bucket>&quot;Mar. 9&quot;</bucket>
+              <bucket>&quot;Mar. 10&quot;</bucket>
+              <bucket>&quot;Mar. 11&quot;</bucket>
+              <bucket>&quot;Mar. 12&quot;</bucket>
+              <bucket>&quot;Mar. 13&quot;</bucket>
+              <bucket>&quot;Mar. 14&quot;</bucket>
+              <bucket>&quot;Mar. 15&quot;</bucket>
+              <bucket>&quot;Mar. 16&quot;</bucket>
+              <bucket>&quot;Mar. 17&quot;</bucket>
+              <bucket>&quot;Mar. 18&quot;</bucket>
+              <bucket>&quot;Mar. 19&quot;</bucket>
+              <bucket>&quot;Mar. 20&quot;</bucket>
+              <bucket>&quot;Mar. 21&quot;</bucket>
+              <bucket>&quot;Mar. 22&quot;</bucket>
+              <bucket>&quot;Mar. 23&quot;</bucket>
+              <bucket>&quot;Mar. 24&quot;</bucket>
+              <bucket>&quot;Mar. 25&quot;</bucket>
+              <bucket>&quot;Mar. 26&quot;</bucket>
+              <bucket>&quot;Mar. 27&quot;</bucket>
+              <bucket>&quot;Mar. 28&quot;</bucket>
+              <bucket>&quot;Mar. 29&quot;</bucket>
+              <bucket>&quot;Mar. 30&quot;</bucket>
+              <bucket>&quot;Apr. 1&quot;</bucket>
+              <bucket>&quot;Apr. 2&quot;</bucket>
+              <bucket>&quot;Apr. 3&quot;</bucket>
+              <bucket>&quot;Apr. 4&quot;</bucket>
+              <bucket>&quot;Apr. 5&quot;</bucket>
+              <bucket>&quot;Apr. 6&quot;</bucket>
+              <bucket>&quot;Apr. 7&quot;</bucket>
+              <bucket>&quot;Apr. 8&quot;</bucket>
+              <bucket>&quot;Apr. 9&quot;</bucket>
+              <bucket>&quot;Apr. 10&quot;</bucket>
+              <bucket>&quot;Apr. 11&quot;</bucket>
+              <bucket>&quot;Apr. 12&quot;</bucket>
+              <bucket>&quot;Apr. 13&quot;</bucket>
+              <bucket>&quot;Apr. 14&quot;</bucket>
+              <bucket>&quot;Apr. 15&quot;</bucket>
+              <bucket>&quot;Apr. 16&quot;</bucket>
+              <bucket>&quot;Apr. 17&quot;</bucket>
+              <bucket>&quot;Apr. 18&quot;</bucket>
+              <bucket>&quot;Apr. 19&quot;</bucket>
+              <bucket>&quot;Apr. 20&quot;</bucket>
+              <bucket>&quot;Apr. 21&quot;</bucket>
+              <bucket>&quot;Apr. 22&quot;</bucket>
+              <bucket>&quot;Apr. 23&quot;</bucket>
+              <bucket>&quot;Apr. 24&quot;</bucket>
+              <bucket>&quot;Apr. 25&quot;</bucket>
+              <bucket>&quot;Apr. 26&quot;</bucket>
+              <bucket>&quot;Apr. 27&quot;</bucket>
+              <bucket>&quot;Apr. 28&quot;</bucket>
+              <bucket>&quot;Apr. 29&quot;</bucket>
+              <bucket>&quot;Apr. 30&quot;</bucket>
+              <bucket>&quot;Mar. 31&quot;</bucket>
+              <bucket>&quot;May. 1&quot;</bucket>
+              <bucket>&quot;May. 2&quot;</bucket>
+              <bucket>&quot;May. 3&quot;</bucket>
+              <bucket>&quot;May. 4&quot;</bucket>
+              <bucket>&quot;May. 5&quot;</bucket>
+              <bucket>&quot;May. 6&quot;</bucket>
+              <bucket>&quot;May. 7&quot;</bucket>
+              <bucket>&quot;May. 8&quot;</bucket>
+              <bucket>&quot;May. 9&quot;</bucket>
+              <bucket>&quot;May. 10&quot;</bucket>
+              <bucket>&quot;May. 11&quot;</bucket>
+              <bucket>&quot;May. 12&quot;</bucket>
+              <bucket>&quot;May. 13&quot;</bucket>
+              <bucket>&quot;May. 14&quot;</bucket>
+              <bucket>&quot;May. 15&quot;</bucket>
+              <bucket>&quot;May. 16&quot;</bucket>
+              <bucket>&quot;May. 17&quot;</bucket>
+              <bucket>&quot;May. 18&quot;</bucket>
+              <bucket>&quot;May. 19&quot;</bucket>
+              <bucket>&quot;May. 20&quot;</bucket>
+              <bucket>&quot;May. 21&quot;</bucket>
+              <bucket>&quot;May. 22&quot;</bucket>
+              <bucket>&quot;May. 23&quot;</bucket>
+              <bucket>&quot;May. 24&quot;</bucket>
+              <bucket>&quot;May. 25&quot;</bucket>
+              <bucket>&quot;May. 26&quot;</bucket>
+              <bucket>&quot;May. 27&quot;</bucket>
+              <bucket>&quot;May. 28&quot;</bucket>
+              <bucket>&quot;May. 29&quot;</bucket>
+              <bucket>&quot;May. 30&quot;</bucket>
+              <bucket>&quot;May. 31&quot;</bucket>
+              <bucket>&quot;Jun. 1&quot;</bucket>
+              <bucket>&quot;Jun. 2&quot;</bucket>
+              <bucket>&quot;Jun. 3&quot;</bucket>
+              <bucket>&quot;Jun. 4&quot;</bucket>
+              <bucket>&quot;Jun. 5&quot;</bucket>
+              <bucket>&quot;Jun. 6&quot;</bucket>
+              <bucket>&quot;Jun. 7&quot;</bucket>
+              <bucket>&quot;Jun. 8&quot;</bucket>
+              <bucket>&quot;Jun. 9&quot;</bucket>
+              <bucket>&quot;Jun. 10&quot;</bucket>
+              <bucket>&quot;Jun. 11&quot;</bucket>
+              <bucket>&quot;Jun. 12&quot;</bucket>
+              <bucket>&quot;Jun. 13&quot;</bucket>
+              <bucket>&quot;Jun. 14&quot;</bucket>
+              <bucket>&quot;Jun. 15&quot;</bucket>
+              <bucket>&quot;Jun. 16&quot;</bucket>
+              <bucket>&quot;Jun. 17&quot;</bucket>
+              <bucket>&quot;Jun. 18&quot;</bucket>
+              <bucket>&quot;Jun. 19&quot;</bucket>
+              <bucket>&quot;Jun. 20&quot;</bucket>
+              <bucket>&quot;Jun. 21&quot;</bucket>
+              <bucket>&quot;Jun. 22&quot;</bucket>
+              <bucket>&quot;Jun. 23&quot;</bucket>
+              <bucket>&quot;Jun. 24&quot;</bucket>
+              <bucket>&quot;Jun. 25&quot;</bucket>
+              <bucket>&quot;Jun. 26&quot;</bucket>
+              <bucket>&quot;Jun. 27&quot;</bucket>
+              <bucket>&quot;Jun. 28&quot;</bucket>
+              <bucket>&quot;Jun. 29&quot;</bucket>
+              <bucket>&quot;Jun. 30&quot;</bucket>
+              <bucket>&quot;Jul. 1&quot;</bucket>
+              <bucket>&quot;Jul. 2&quot;</bucket>
+              <bucket>&quot;Jul. 3&quot;</bucket>
+              <bucket>&quot;Jul. 4&quot;</bucket>
+              <bucket>&quot;Jul. 5&quot;</bucket>
+              <bucket>&quot;Jul. 6&quot;</bucket>
+              <bucket>&quot;Jul. 7&quot;</bucket>
+              <bucket>&quot;Jul. 8&quot;</bucket>
+              <bucket>&quot;Jul. 9&quot;</bucket>
+              <bucket>&quot;Jul. 10&quot;</bucket>
+              <bucket>&quot;Jul. 11&quot;</bucket>
+              <bucket>&quot;Jul. 12&quot;</bucket>
+              <bucket>&quot;Jul. 13&quot;</bucket>
+              <bucket>&quot;Jul. 14&quot;</bucket>
+              <bucket>&quot;Jul. 15&quot;</bucket>
+              <bucket>&quot;Jul. 16&quot;</bucket>
+              <bucket>&quot;Jul. 17&quot;</bucket>
+              <bucket>&quot;Jul. 18&quot;</bucket>
+              <bucket>&quot;Jul. 19&quot;</bucket>
+              <bucket>&quot;Jul. 20&quot;</bucket>
+              <bucket>&quot;Jul. 21&quot;</bucket>
+              <bucket>&quot;Jul. 22&quot;</bucket>
+              <bucket>&quot;Jul. 23&quot;</bucket>
+              <bucket>&quot;Jul. 24&quot;</bucket>
+              <bucket>&quot;Jul. 25&quot;</bucket>
+              <bucket>&quot;Jul. 26&quot;</bucket>
+              <bucket>&quot;Jul. 27&quot;</bucket>
+              <bucket>&quot;Jul. 28&quot;</bucket>
+              <bucket>&quot;Jul. 29&quot;</bucket>
+              <bucket>&quot;Jul. 30&quot;</bucket>
+              <bucket>&quot;Jul. 31&quot;</bucket>
+              <bucket>&quot;Aug. 1&quot;</bucket>
+              <bucket>&quot;Aug. 2&quot;</bucket>
+              <bucket>&quot;Aug. 3&quot;</bucket>
+              <bucket>&quot;Aug. 4&quot;</bucket>
+              <bucket>&quot;Aug. 5&quot;</bucket>
+              <bucket>&quot;Aug. 6&quot;</bucket>
+              <bucket>&quot;Aug. 7&quot;</bucket>
+              <bucket>&quot;Aug. 8&quot;</bucket>
+              <bucket>&quot;Aug. 9&quot;</bucket>
+              <bucket>&quot;Aug. 10&quot;</bucket>
+              <bucket>&quot;Aug. 11&quot;</bucket>
+              <bucket>&quot;Aug. 12&quot;</bucket>
+              <bucket>&quot;Aug. 13&quot;</bucket>
+              <bucket>&quot;Aug. 14&quot;</bucket>
+              <bucket>&quot;Aug. 15&quot;</bucket>
+              <bucket>&quot;Aug. 16&quot;</bucket>
+              <bucket>&quot;Aug. 17&quot;</bucket>
+              <bucket>&quot;Aug. 18&quot;</bucket>
+              <bucket>&quot;Aug. 19&quot;</bucket>
+              <bucket>&quot;Aug. 20&quot;</bucket>
+              <bucket>&quot;Aug. 21&quot;</bucket>
+              <bucket>&quot;Aug. 22&quot;</bucket>
+              <bucket>&quot;Aug. 23&quot;</bucket>
+              <bucket>&quot;Aug. 24&quot;</bucket>
+              <bucket>&quot;Aug. 25&quot;</bucket>
+              <bucket>&quot;Aug. 26&quot;</bucket>
+              <bucket>&quot;Aug. 27&quot;</bucket>
+              <bucket>&quot;Aug. 28&quot;</bucket>
+              <bucket>&quot;Aug. 29&quot;</bucket>
+              <bucket>&quot;Aug. 30&quot;</bucket>
+              <bucket>&quot;Aug. 31&quot;</bucket>
+              <bucket>&quot;Sep. 1&quot;</bucket>
+              <bucket>&quot;Sep. 2&quot;</bucket>
+              <bucket>&quot;Sep. 3&quot;</bucket>
+              <bucket>&quot;Sep. 4&quot;</bucket>
+              <bucket>&quot;Sep. 5&quot;</bucket>
+              <bucket>&quot;Sep. 6&quot;</bucket>
+              <bucket>&quot;Sep. 7&quot;</bucket>
+              <bucket>&quot;Sep. 8&quot;</bucket>
+              <bucket>&quot;Sep. 9&quot;</bucket>
+              <bucket>&quot;Sep. 10&quot;</bucket>
+              <bucket>&quot;Sep. 11&quot;</bucket>
+              <bucket>&quot;Sep. 12&quot;</bucket>
+              <bucket>&quot;Sep. 13&quot;</bucket>
+              <bucket>&quot;Sep. 14&quot;</bucket>
+              <bucket>&quot;Sep. 15&quot;</bucket>
+              <bucket>&quot;Sep. 16&quot;</bucket>
+              <bucket>&quot;Sep. 17&quot;</bucket>
+              <bucket>&quot;Sep. 18&quot;</bucket>
+              <bucket>&quot;Sep. 19&quot;</bucket>
+              <bucket>&quot;Sep. 20&quot;</bucket>
+              <bucket>&quot;Sep. 21&quot;</bucket>
+              <bucket>&quot;Sep. 22&quot;</bucket>
+              <bucket>&quot;Sep. 23&quot;</bucket>
+              <bucket>&quot;Sep. 24&quot;</bucket>
+              <bucket>&quot;Sep. 25&quot;</bucket>
+              <bucket>&quot;Sep. 26&quot;</bucket>
+              <bucket>&quot;Sep. 27&quot;</bucket>
+              <bucket>&quot;Sep. 28&quot;</bucket>
+              <bucket>&quot;Sep. 29&quot;</bucket>
+              <bucket>&quot;Sep. 30&quot;</bucket>
+              <bucket>&quot;Oct. 1&quot;</bucket>
+              <bucket>&quot;Oct. 2&quot;</bucket>
+              <bucket>&quot;Oct. 3&quot;</bucket>
+              <bucket>&quot;Oct. 4&quot;</bucket>
+              <bucket>&quot;Oct. 5&quot;</bucket>
+              <bucket>&quot;Oct. 6&quot;</bucket>
+              <bucket>&quot;Oct. 7&quot;</bucket>
+              <bucket>&quot;Oct. 8&quot;</bucket>
+              <bucket>&quot;Oct. 9&quot;</bucket>
+              <bucket>&quot;Oct. 10&quot;</bucket>
+              <bucket>&quot;Oct. 11&quot;</bucket>
+              <bucket>&quot;Oct. 12&quot;</bucket>
+              <bucket>&quot;Oct. 13&quot;</bucket>
+              <bucket>&quot;Oct. 14&quot;</bucket>
+              <bucket>&quot;Oct. 15&quot;</bucket>
+              <bucket>&quot;Oct. 16&quot;</bucket>
+              <bucket>&quot;Oct. 17&quot;</bucket>
+              <bucket>&quot;Oct. 18&quot;</bucket>
+              <bucket>&quot;Oct. 19&quot;</bucket>
+              <bucket>&quot;Oct. 20&quot;</bucket>
+              <bucket>&quot;Oct. 21&quot;</bucket>
+              <bucket>&quot;Oct. 22&quot;</bucket>
+              <bucket>&quot;Oct. 23&quot;</bucket>
+              <bucket>&quot;Oct. 24&quot;</bucket>
+              <bucket>&quot;Oct. 25&quot;</bucket>
+              <bucket>&quot;Oct. 26&quot;</bucket>
+              <bucket>&quot;Oct. 27&quot;</bucket>
+              <bucket>&quot;Oct. 28&quot;</bucket>
+              <bucket>&quot;Oct. 29&quot;</bucket>
+              <bucket>&quot;Oct. 30&quot;</bucket>
+              <bucket>&quot;Oct. 31&quot;</bucket>
+              <bucket>&quot;Nov. 1&quot;</bucket>
+              <bucket>&quot;Nov. 2&quot;</bucket>
+              <bucket>&quot;Nov. 3&quot;</bucket>
+              <bucket>&quot;Nov. 4&quot;</bucket>
+              <bucket>&quot;Nov. 5&quot;</bucket>
+              <bucket>&quot;Nov. 6&quot;</bucket>
+              <bucket>&quot;Nov. 7&quot;</bucket>
+              <bucket>&quot;Nov. 8&quot;</bucket>
+              <bucket>&quot;Nov. 9&quot;</bucket>
+              <bucket>&quot;Nov. 10&quot;</bucket>
+              <bucket>&quot;Nov. 11&quot;</bucket>
+              <bucket>&quot;Nov. 12&quot;</bucket>
+              <bucket>&quot;Nov. 13&quot;</bucket>
+              <bucket>&quot;Nov. 14&quot;</bucket>
+              <bucket>&quot;Nov. 15&quot;</bucket>
+              <bucket>&quot;Nov. 16&quot;</bucket>
+              <bucket>&quot;Nov. 17&quot;</bucket>
+              <bucket>&quot;Nov. 18&quot;</bucket>
+              <bucket>&quot;Nov. 19&quot;</bucket>
+              <bucket>&quot;Nov. 20&quot;</bucket>
+              <bucket>&quot;Nov. 21&quot;</bucket>
+              <bucket>&quot;Nov. 22&quot;</bucket>
+              <bucket>&quot;Nov. 23&quot;</bucket>
+              <bucket>&quot;Nov. 24&quot;</bucket>
+              <bucket>&quot;Nov. 25&quot;</bucket>
+              <bucket>&quot;Nov. 26&quot;</bucket>
+              <bucket>&quot;Nov. 27&quot;</bucket>
+              <bucket>&quot;Nov. 28&quot;</bucket>
+              <bucket>&quot;Nov. 29&quot;</bucket>
+              <bucket>&quot;Nov. 30&quot;</bucket>
+              <bucket>&quot;Dec. 1&quot;</bucket>
+              <bucket>&quot;Dec. 2&quot;</bucket>
+              <bucket>&quot;Dec. 3&quot;</bucket>
+              <bucket>&quot;Dec. 4&quot;</bucket>
+              <bucket>&quot;Dec. 5&quot;</bucket>
+              <bucket>&quot;Dec. 6&quot;</bucket>
+              <bucket>&quot;Dec. 7&quot;</bucket>
+              <bucket>&quot;Dec. 8&quot;</bucket>
+              <bucket>&quot;Dec. 9&quot;</bucket>
+              <bucket>&quot;Dec. 10&quot;</bucket>
+              <bucket>&quot;Dec. 11&quot;</bucket>
+              <bucket>&quot;Dec. 12&quot;</bucket>
+              <bucket>&quot;Dec. 13&quot;</bucket>
+              <bucket>&quot;Dec. 14&quot;</bucket>
+              <bucket>&quot;Dec. 15&quot;</bucket>
+              <bucket>&quot;Dec. 16&quot;</bucket>
+              <bucket>&quot;Dec. 17&quot;</bucket>
+              <bucket>&quot;Dec. 18&quot;</bucket>
+              <bucket>&quot;Dec. 19&quot;</bucket>
+              <bucket>&quot;Dec. 20&quot;</bucket>
+              <bucket>&quot;Dec. 21&quot;</bucket>
+              <bucket>&quot;Dec. 22&quot;</bucket>
+              <bucket>&quot;Dec. 23&quot;</bucket>
+              <bucket>&quot;Dec. 24&quot;</bucket>
+              <bucket>&quot;Dec. 25&quot;</bucket>
+              <bucket>&quot;Dec. 26&quot;</bucket>
+              <bucket>&quot;Dec. 27&quot;</bucket>
+              <bucket>&quot;Dec. 28&quot;</bucket>
+              <bucket>&quot;Dec. 29&quot;</bucket>
+              <bucket>&quot;Dec. 30&quot;</bucket>
+              <bucket>&quot;Dec. 31&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.13bbhcn13tjrfp1g2ke161le5s1y].[usr:Calculation_2077777962980646919:nk]'>
+            <groupfilter function='member' level='[usr:Calculation_2077777962980646919:nk]' member='&quot;Show&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.13bbhcn13tjrfp1g2ke161le5s1y].[usr:Calculation_2077777962980646919:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.13bbhcn13tjrfp1g2ke161le5s1y].[none:Pivot Field Names:nk]' />
+              <lod column='[federated.13bbhcn13tjrfp1g2ke161le5s1y].[usr:Calculation_2077777962980646919:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.86756908893585205' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.13bbhcn13tjrfp1g2ke161le5s1y].[sum:Pivot Field Values:qk]</rows>
+        <cols>[federated.13bbhcn13tjrfp1g2ke161le5s1y].[none:date:nk]</cols>
+      </table>
+      <simple-id uuid='{A02B4403-21AE-439E-856F-F23DCE8CC29D}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.13bbhcn13tjrfp1g2ke161le5s1y].[none:Pivot Field Names:nk]' type='color' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.13bbhcn13tjrfp1g2ke161le5s1y].[none:Calculation_2077777962980646919:nk]</field>
+            <field>[federated.13bbhcn13tjrfp1g2ke161le5s1y].[none:Pivot Field Names:nk]</field>
+            <field>[federated.13bbhcn13tjrfp1g2ke161le5s1y].[usr:Calculation_2077777962977067010:nk]</field>
+            <field>[federated.13bbhcn13tjrfp1g2ke161le5s1y].[usr:Calculation_2077777962977583107:nk]</field>
+            <field>[federated.13bbhcn13tjrfp1g2ke161le5s1y].[usr:Calculation_2077777962978377732:nk]</field>
+            <field>[federated.13bbhcn13tjrfp1g2ke161le5s1y].[usr:Calculation_2077777962980646919:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{3DC675EA-6B01-44D3-8776-DBC4C1D50144}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='Sheet 1' width='384'>
+      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
+      Nnxzu90kEgnT99ntdsPI1dbWMj8/n/e4VFV9sV1AFy9eRFVVotEo8/PzRWeGV69eJRKJoCiK
+      YTTMmJ2d5e7du4Z8McWWTqc5d+7cBvli33Hx4kU6OjoIh8PE4/GiS8w7d+4QiUTo6uriwYMH
+      RVM1FxcXuX37Np2dnWSzWa5du2Yqn8vlOHXqFM3NzVRWVnLmzJmi49azRFZWVigvLy86hpqa
+      Gm7dulXy7Ku8vJyhoaGSUzqrq6vp7+8vecZps9lwu92oqorNZsPpdBa9P3RlJoSgurqa1dVV
+      0/FUVlZy+/btklc7NTU13L59u+QxOJ1OFhYWTFOh1yOEMGo8Xn/9daqqqorO6Ldv3260RLlw
+      4QLz8/Om49HTJ69cucLZs2cZHR01PUc2m43e3l7u37/P6dOnjdmtGXa73fjp7+8vek+dPXuW
+      dDpdsg64fv06y8vLJcsvLS1x8+bNknUGaI0qL168yMWLF7HZbBv6feXjwYMHhvz4+DhtbW15
+      5TKZzIu9ApAkiba2NoaHh2lpaWFubs50lq6nA5bSMgI0H2NdXV1Js2bQbuBgMGj0JikFVVWN
+      C26WDqmzurpqdNt84403uHTpkumMeHV1la6uLiorK6moqODs2bOmn5/L5airqzOOY3Jyklwu
+      Z+oX7+3txe/3oygKc3NzRpOuQqTTaZaXlzl58iSyLLNr1y7TGWU2mzVm5k6nk8bGRtPimnQ6
+      TSaT4eTJkzgcDlpbW01nk06nk1gsZvR6SqVSnD9/nn379hVM1XQ4HJw/fx5JkkilUkSjUTo6
+      Ogpei2w2y8zMDKdOnQIwmgAWIpVKkU6nOXXqFHa7nfb2dtOiJbHWt+n8+fO43W4qKytN+w3B
+      I5fj1NQUiqKQTCZNVwA2m43a2lpCoRArKyuMjo4yNjbG66+/nldekiSCwSAej4eFhQUWFhYY
+      Hh7m2LFjBVNm/X6/0VgwEolw+vRpfvSjH+V9riVJ2lDsFg6HWVlZMc3v93g8dHR0lOyCc7lc
+      NDU1lewas9vtJeuMXC5HIpEwGrnZ7XbDHZcPVVVZWVmhvr6e+vp6ZFnG4/EUXKGXlZW92FlA
+      Dx8+pLW1lW+++YZoNMo777xjusycnJzk8uXLxnKpp6eHxsbGgvLJZJLPPvvMKFaqr6/P2/1Q
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
